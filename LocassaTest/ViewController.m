@@ -9,7 +9,9 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+- (IBAction)repopulatePressed:(id)sender;
 @end
 
 @implementation ViewController
@@ -24,4 +26,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)repopulatePressed:(id)sender {
+}
 @end
