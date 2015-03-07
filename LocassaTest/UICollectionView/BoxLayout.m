@@ -88,13 +88,31 @@ static NSString * const BoxCellKind = @"BoxCell";
 
 }
 
-- (CGRect)frameForBoxAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (NSInteger)numberOfColumns {
     
     //Get max number of cells per row.
-    NSInteger numberOfColumns = self.collectionView.bounds.size.width / (self.itemSize.width + self.interItemSpacingX);
     
-    NSLog(@"Collection View width: %f", self.collectionView.bounds.size.width);
+    //Calculate number of columns without separating space
+    NSInteger initialNumbeOfColumns = self.collectionView.bounds.size.width / self.itemSize.width;
+    
+    //Calculate the number of spaces required based in initial number of columns
+    NSInteger numberOfSpaces = initialNumbeOfColumns - 1;
+    
+    //Adjust the width to take account of spacing
+    CGFloat adjustedWidth = self.collectionView.bounds.size.width - (numberOfSpaces * self.interItemSpacingX);
+    
+    //Return adjusted number of columns
+    return adjustedWidth / self.itemSize.width;
+    
+    
+}
+
+- (CGRect)frameForBoxAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger numberOfColumns = [self numberOfColumns];
+
+    
+    NSLog(@"Number of colums: %ld", numberOfColumns);
     
     NSInteger row = indexPath.row / numberOfColumns;
     NSInteger column;
@@ -137,7 +155,7 @@ static NSString * const BoxCellKind = @"BoxCell";
 
 -(CGSize)collectionViewContentSize {
     
-    NSInteger numberOfColumns = self.collectionView.bounds.size.width / (self.itemSize.width + self.interItemSpacingX);
+    NSInteger numberOfColumns = [self numberOfColumns];
     NSInteger rowCount = [self.collectionView numberOfItemsInSection:0] / numberOfColumns;
     //Make sure you count another row if one is partially filled
     if (rowCount % numberOfColumns != 0) {
