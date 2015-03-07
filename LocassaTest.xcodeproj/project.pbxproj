@@ -16,6 +16,7 @@
 		F06865431AAB0698008F5DB7 /* LocassaTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F06865421AAB0698008F5DB7 /* LocassaTestTests.m */; };
 		F06865501AAB07FF008F5DB7 /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = F068654F1AAB07FF008F5DB7 /* Box.m */; };
 		F06865551AAB09A8008F5DB7 /* UIColor+LocassaColours.m in Sources */ = {isa = PBXBuildFile; fileRef = F06865541AAB09A8008F5DB7 /* UIColor+LocassaColours.m */; };
+		F06865581AAB0FEE008F5DB7 /* BoxLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F06865571AAB0FEE008F5DB7 /* BoxLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		F068654F1AAB07FF008F5DB7 /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Box.m; path = Model/Box.m; sourceTree = "<group>"; };
 		F06865531AAB09A8008F5DB7 /* UIColor+LocassaColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+LocassaColours.h"; path = "Categories/UIColor+LocassaColours.h"; sourceTree = "<group>"; };
 		F06865541AAB09A8008F5DB7 /* UIColor+LocassaColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LocassaColours.m"; path = "Categories/UIColor+LocassaColours.m"; sourceTree = "<group>"; };
+		F06865561AAB0FEE008F5DB7 /* BoxLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxLayout.h; path = UICollectionView/BoxLayout.h; sourceTree = "<group>"; };
+		F06865571AAB0FEE008F5DB7 /* BoxLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxLayout.m; path = UICollectionView/BoxLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 		F06865251AAB0698008F5DB7 /* LocassaTest */ = {
 			isa = PBXGroup;
 			children = (
+				F06865591AAB0FF8008F5DB7 /* CollectionView */,
 				F06865511AAB0906008F5DB7 /* Categories */,
 				F068654C1AAB07C6008F5DB7 /* Model Objects */,
 				F068652A1AAB0698008F5DB7 /* AppDelegate.h */,
@@ -143,6 +147,15 @@
 				F06865541AAB09A8008F5DB7 /* UIColor+LocassaColours.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		F06865591AAB0FF8008F5DB7 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F06865561AAB0FEE008F5DB7 /* BoxLayout.h */,
+				F06865571AAB0FEE008F5DB7 /* BoxLayout.m */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F068652F1AAB0698008F5DB7 /* ViewController.m in Sources */,
+				F06865581AAB0FEE008F5DB7 /* BoxLayout.m in Sources */,
 				F06865501AAB07FF008F5DB7 /* Box.m in Sources */,
 				F06865551AAB09A8008F5DB7 /* UIColor+LocassaColours.m in Sources */,
 				F068652C1AAB0698008F5DB7 /* AppDelegate.m in Sources */,
