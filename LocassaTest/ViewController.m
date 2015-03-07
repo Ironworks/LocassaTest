@@ -104,6 +104,27 @@
 }
 #pragma mark - 
 #pragma mark - UICollectionView Delegate
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [self.collectionView performBatchUpdates:^{
+        
+        [self.collectionView moveItemAtIndexPath:indexPath toIndexPath:[NSIndexPath indexPathForItem:_itemsArray.count -1 inSection:indexPath.section]];
+        
+        
+    } completion:^(BOOL finished) {
+        //Update the array to relflect the changes to the collectionView. 
+        Box *box = _itemsArray[indexPath.row];
+        [_itemsArray removeObjectAtIndex:indexPath.row];
+        [_itemsArray addObject:box];
+        
+    }];
+    
+    
+    [self.collectionView reloadData];
+    
+    
+}
 
 
 @end
