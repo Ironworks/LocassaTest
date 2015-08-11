@@ -112,8 +112,6 @@ static NSString * const BoxCellKind = @"BoxCell";
     NSInteger numberOfColumns = [self numberOfColumns];
 
     
-    NSLog(@"Number of colums: %ld", numberOfColumns);
-    
     NSInteger row = indexPath.row / numberOfColumns;
     NSInteger column;
     if (row == 0) {
